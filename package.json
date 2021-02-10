@@ -1,0 +1,16 @@
+{
+  "name": "ore_price_checker",
+  "version": "1.0.0",
+  "description": "Determine the most profitable ore to mine in EVE online.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mitchell Fenner",
+  "license": "MIT",
+  "dependencies": {
+    "boxen": "^5.0.0",
+    "chalk": "^4.1.0",
+    "node-fetch": "^2.6.1"
+  }
+}
