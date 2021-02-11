@@ -10,4 +10,4 @@ Uses the [EVEMarketer API](https://api.evemarketer.com/ec/).
 `npm start`
 
 ### Screenshot
-<img src="./screenshot.png" width="70%"/>
+<img src="./screenshot.png" width="100%"/>
