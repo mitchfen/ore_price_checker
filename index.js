@@ -1,22 +1,10 @@
 const fetch = require('node-fetch');
 const chalk = require('chalk');
-let ores = require('./ores.json'); // Load in the JSON file
+
+let ores = require('./JSON/ores.json'); // Load in the JSON file
+let typeIDs = require('./JSON/typeIDs.json'); // These are the typeID's on EVEMarketer for HighSec ores
+
 let regionLimit = '10000002'; // Value for "The Forge" - Jita trade hub
-// These typeID's on EVEMarketer for HighSec ores
-let typeIDs = [ 
-    1230,
-    17470,
-    17471,
-    18,
-    17455,
-    17456,
-    28432,
-    28430,
-    28431,
-    28422,
-    28421,
-    28423
-];
 
 // Build up the URL from the typeIDs. 
 let url = `https://api.evemarketer.com/ec/marketstat/json?regionlimit=${regionLimit}`
@@ -25,7 +13,7 @@ for(let i = 0; i < typeIDs.length; i++) {
 }
 
 // Call async function 
-main();
+getData();
 
 // Fetch and parse data from API
 async function getData() {
@@ -44,7 +32,7 @@ async function getData() {
             }
         }
     }
-    calculateAndPrint()
+    calculateAndPrint();
 }
 
 function calculateAndPrint() {
@@ -74,5 +62,5 @@ function calculateAndPrint() {
     console.log(
         'You can compress it to increase profits by ' +
         chalk.yellow('%f%'), compressionGain);
-    console.log()
+    console.log();
 }
