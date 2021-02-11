@@ -1,6 +1,6 @@
 [
     {
-        "name": "veldspar",
+        "name": "Veldspar",
         "id": 1230,
         "compressed_id": 28432,
         "volume": 0.1,
@@ -9,7 +9,7 @@
         "compressed_price": null
     },
     {
-        "name": "concentrated_veldspar",
+        "name": "Concentrated Veldspar",
         "id": 17470,
         "compressed_id": 28430,
         "volume": 0.1,
@@ -18,7 +18,7 @@
         "compressed_price": null
     },
     {
-        "name": "dense_veldspar",
+        "name": "Dense Veldspar",
         "id": 17471,
         "compressed_id": 28431,
         "volume": 0.1,
@@ -27,7 +27,7 @@
         "compressed_price": null
     },
     {
-        "name": "plagioclase",
+        "name": "Plagioclase",
         "id": 18,
         "compressed_id": 28422,
         "volume": 0.35,
@@ -36,7 +36,7 @@
         "compressed_price": null
     },
     {
-        "name": "azure_plagioclase",
+        "name": "Azure Plagioclase",
         "id": 17455,
         "compressed_id": 28421,
         "volume": 0.35,
@@ -45,7 +45,7 @@
         "compressed_price": null
     },
     {
-        "name": "rich_plagioclase",
+        "name": "Rich Plagioclase",
         "id": 17456,
         "compressed_id": 28423,
         "volume": 0.35,
