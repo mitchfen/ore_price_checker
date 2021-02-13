@@ -8,7 +8,7 @@ Uses the [EVEMarketer API](https://api.evemarketer.com/ec/).
 
 `npm i`
 
-### Run
+### Compile and run
 
 `npm run start`
 
