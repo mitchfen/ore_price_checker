@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Veldspar",
+    "id": 1230,
+    "compressed_id": 28432,
+    "volume": 0.1,
+    "compressed_volume": 0.15,
+    "price": -99,
+    "compressed_price": -99
+  },
+  {
+    "name": "Concentrated Veldspar",
+    "id": 17470,
+    "compressed_id": 28430,
+    "volume": 0.1,
+    "compressed_volume": 0.15,
+    "price": -99,
+    "compressed_price": -99
+  },
+  {
+    "name": "Dense Veldspar",
+    "id": 17471,
+    "compressed_id": 28431,
+    "volume": 0.1,
+    "compressed_volume": 0.15,
+    "price": -99,
+    "compressed_price": -99
+  },
+  {
+    "name": "Plagioclase",
+    "id": 18,
+    "compressed_id": 28422,
+    "volume": 0.35,
+    "compressed_volume": 0.15,
+    "price": -99,
+    "compressed_price": -99
+  },
+  {
+    "name": "Azure Plagioclase",
+    "id": 17455,
+    "compressed_id": 28421,
+    "volume": 0.35,
+    "compressed_volume": 0.15,
+    "price": -99,
+    "compressed_price": -99
+  },
+  {
+    "name": "Rich Plagioclase",
+    "id": 17456,
+    "compressed_id": 28423,
+    "volume": 0.35,
+    "compressed_volume": 0.15,
+    "price": -99,
+    "compressed_price": -99
+  }
+]
