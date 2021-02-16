@@ -5,8 +5,8 @@
     "compressed_id": 28432,
     "volume": 0.1,
     "compressed_volume": 0.15,
-    "price": -99,
-    "compressed_price": -99
+    "price": 0,
+    "compressed_price": 0
   },
   {
     "name": "Concentrated Veldspar",
@@ -14,8 +14,8 @@
     "compressed_id": 28430,
     "volume": 0.1,
     "compressed_volume": 0.15,
-    "price": -99,
-    "compressed_price": -99
+    "price": 0,
+    "compressed_price": 0
   },
   {
     "name": "Dense Veldspar",
@@ -23,8 +23,8 @@
     "compressed_id": 28431,
     "volume": 0.1,
     "compressed_volume": 0.15,
-    "price": -99,
-    "compressed_price": -99
+    "price": 0,
+    "compressed_price": 0
   },
   {
     "name": "Plagioclase",
@@ -32,8 +32,8 @@
     "compressed_id": 28422,
     "volume": 0.35,
     "compressed_volume": 0.15,
-    "price": -99,
-    "compressed_price": -99
+    "price": 0,
+    "compressed_price": 0
   },
   {
     "name": "Azure Plagioclase",
@@ -41,8 +41,8 @@
     "compressed_id": 28421,
     "volume": 0.35,
     "compressed_volume": 0.15,
-    "price": -99,
-    "compressed_price": -99
+    "price": 0,
+    "compressed_price": 0
   },
   {
     "name": "Rich Plagioclase",
@@ -50,7 +50,34 @@
     "compressed_id": 28423,
     "volume": 0.35,
     "compressed_volume": 0.15,
-    "price": -99,
-    "compressed_price": -99
+    "price": 0,
+    "compressed_price": 0
+  },
+  {
+    "name": "Scordite",
+    "id": 1228,
+    "compressed_id": 28429,
+    "volume": 0.15,
+    "compressed_volume": 0.19,
+    "price": 0,
+    "compressed_price": 0
+  },
+  {
+    "name": "Condensed Scordite",
+    "id": 17463,
+    "compressed_id": 28427,
+    "volume": 0.15,
+    "compressed_volume": 0.19,
+    "price": 0,
+    "compressed_price": 0
+  },
+  {
+    "name": "Massive Scordite",
+    "id": 17464,
+    "compressed_id": 28428,
+    "volume": 0.15,
+    "compressed_volume": 0.19,
+    "price": 0,
+    "compressed_price": 0
   }
 ]
