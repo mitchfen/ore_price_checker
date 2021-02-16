@@ -1,7 +1,7 @@
 // Build up the fetch URL from the ores in ores.json
 export function buildURL(ores: any) {
   let typeIDs: Array<string> = [];
-  for (let i = 1; i < ores.length; i++) {
+  for (let i = 0; i < ores.length; i++) {
     typeIDs.push(ores[i].id);
     typeIDs.push(ores[i].compressed_id);
   }
