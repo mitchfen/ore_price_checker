@@ -12,7 +12,6 @@ RUN npm run build
 FROM node:alpine
 WORKDIR /app
 COPY --from=build /app/build /app/build
-COPY --from=build /app/JSON /app/JSON
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json .
 COPY package-lock.json .
