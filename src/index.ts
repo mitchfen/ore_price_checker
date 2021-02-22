@@ -86,7 +86,7 @@ let ores = [
 ];
 
 // Parse the price data and store in ores object
-export function parseData(priceData: any, ores: any) {
+function parseData(priceData: any) {
   // Parse out the prices
   for (let i = 0; i < priceData.length; i++) {
     for (let j = 0; j < ores.length; j++) {
@@ -101,10 +101,10 @@ export function parseData(priceData: any, ores: any) {
 }
 
 // Calculate most profitable ore and print to screen
-export function calculateAndPrint(ores: any) {
+function calculateAndPrint() {
   let bestOre = ores[0].name;
   let compressionGain = null;
-  // Bubble sort to find the best ore
+  // Bubble up the largest price
   let bestPricePerM3 = ores[0].price / ores[0].volume;
   for (let i = 1; i < ores.length; i++) {
     if (ores[i].price / ores[i].volume > bestPricePerM3) {
@@ -135,8 +135,8 @@ export function calculateAndPrint(ores: any) {
 }
 
 // Build up the fetch URL from the ores in ores.json
-function buildURL(ores: any) {
-  let typeIDs: Array<string> = [];
+function buildURL() {
+  let typeIDs: Array<number> = [];
   for (let i = 0; i < ores.length; i++) {
     typeIDs.push(ores[i].id);
     typeIDs.push(ores[i].compressed_id);
@@ -151,8 +151,8 @@ function buildURL(ores: any) {
 }
 
 // Fetch and parse data from API
-let url = buildURL(ores);
+let url = buildURL();
 fetchURL(url)
   .then((response: any) => response.json())
-  .then((priceData: JSON) => parseData(priceData, ores))
-  .then(() => calculateAndPrint(ores));
+  .then((priceData: JSON) => parseData(priceData))
+  .then(() => calculateAndPrint());
