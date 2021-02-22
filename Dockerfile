@@ -16,4 +16,5 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json .
 COPY package-lock.json .
 RUN npm ci --production
-CMD ["npm", "run", "start"]
+ENTRYPOINT ["npm", "run", "check"]
+CMD ["jita"]

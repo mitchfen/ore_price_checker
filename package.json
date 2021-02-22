@@ -6,7 +6,7 @@
   "description": "Determine the most profitable ore to mine in EVE online.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/index.js",
+    "check": "node ./build/index.js",
     "build": "tsc"
   },
   "dependencies": {
