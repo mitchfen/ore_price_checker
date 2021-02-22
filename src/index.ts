@@ -1,89 +1,9 @@
 const fetchURL = require("node-fetch");
 const chalk = require("chalk");
 
-let ores = [
-  {
-    name: "Veldspar",
-    id: 1230,
-    compressed_id: 28432,
-    volume: 0.1,
-    compressed_volume: 0.15,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Concentrated Veldspar",
-    id: 17470,
-    compressed_id: 28430,
-    volume: 0.1,
-    compressed_volume: 0.15,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Dense Veldspar",
-    id: 17471,
-    compressed_id: 28431,
-    volume: 0.1,
-    compressed_volume: 0.15,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Plagioclase",
-    id: 18,
-    compressed_id: 28422,
-    volume: 0.35,
-    compressed_volume: 0.15,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Azure Plagioclase",
-    id: 17455,
-    compressed_id: 28421,
-    volume: 0.35,
-    compressed_volume: 0.15,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Rich Plagioclase",
-    id: 17456,
-    compressed_id: 28423,
-    volume: 0.35,
-    compressed_volume: 0.15,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Scordite",
-    id: 1228,
-    compressed_id: 28429,
-    volume: 0.15,
-    compressed_volume: 0.19,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Condensed Scordite",
-    id: 17463,
-    compressed_id: 28427,
-    volume: 0.15,
-    compressed_volume: 0.19,
-    price: 0,
-    compressed_price: 0,
-  },
-  {
-    name: "Massive Scordite",
-    id: 17464,
-    compressed_id: 28428,
-    volume: 0.15,
-    compressed_volume: 0.19,
-    price: 0,
-    compressed_price: 0,
-  },
-];
+import { argv } from "process";
+import { dataClass } from "./dataClass";
+let ores = dataClass.ores;
 
 // Parse the price data and store in ores object
 function parseData(priceData: any) {
@@ -103,7 +23,7 @@ function parseData(priceData: any) {
 // Calculate most profitable ore and print to screen
 function calculateAndPrint() {
   let bestOre = ores[0].name;
-  let compressionGain = null;
+  let compressionGain = 0;
   // Bubble up the largest price
   let bestPricePerM3 = ores[0].price / ores[0].volume;
   for (let i = 1; i < ores.length; i++) {
@@ -112,10 +32,9 @@ function calculateAndPrint() {
       bestOre = ores[i].name;
       // Calculate the % gained by compression.
       // 1 Compressed ore is composed of 100 units of normal ore.
-      compressionGain = (
+      compressionGain =
         ((ores[i].compressed_price / 100 - ores[i].price) / ores[i].price) *
-        100
-      ).toFixed(2);
+        100;
     }
   }
   // Print results to screen
@@ -127,10 +46,17 @@ function calculateAndPrint() {
       chalk.green("%i ISK/m3"),
     bestPricePerM3
   );
-  console.log(
-    "You can compress it to increase profits by " + chalk.yellow("%f%"),
-    compressionGain
-  );
+  if (compressionGain < 0) {
+    console.log(
+      "Compressing your ore will decrease profits by " + chalk.red("%f%"),
+      compressionGain.toFixed(2)
+    );
+  } else {
+    console.log(
+      "Compressing your ore will increase profits by " + chalk.yellow("%f%"),
+      compressionGain.toFixed(2)
+    );
+  }
   console.log();
 }
 
@@ -141,8 +67,31 @@ function buildURL() {
     typeIDs.push(ores[i].id);
     typeIDs.push(ores[i].compressed_id);
   }
-  let regionLimit = "10000002"; // Value for "The Forge" - Jita trade hub
-  let url = `https://api.evemarketer.com/ec/marketstat/json?regionlimit=${regionLimit}`;
+
+  // Determine the desired region
+  let region = dataClass.regions["The Forge"];
+  let arg = process.argv.slice(2);
+  switch (arg[0]) {
+    case "hek":
+      region = dataClass.regions.Metropolis;
+      break;
+    case "amarr":
+      region = dataClass.regions.Domain;
+      break;
+    case "rens":
+      region = dataClass.regions.Heimatar;
+      break;
+    case "dodixie":
+      region = dataClass.regions["Sinq Laison"];
+      break;
+    case "jita":
+      break;
+    default:
+      // Leave as Jita
+      break;
+  }
+
+  let url = `https://api.evemarketer.com/ec/marketstat/json?regionlimit=${region}`;
   // Build the search URL
   for (let i = 0; i < typeIDs.length; i++) {
     url = url + `&typeid=${typeIDs[i]}`;
