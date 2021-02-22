@@ -3,6 +3,7 @@
 - Determines the most profitable HighSec ore to mine in EVE online. This was a fun chance to learn the Fetch API and play around with Typescript.
 - The program also calculates the percent profit to be gained by compressing your ore.
 - Uses the [API](https://api.evemarketer.com/ec/) from [EVEMarketer](https://evemarketer.com/).
+- Loosley follows the [emoji commit paradigm](https://github.com/cooperka/emoji-commit-messages)
 
 ## Screenshot
 
