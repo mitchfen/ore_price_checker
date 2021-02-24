@@ -9,12 +9,11 @@
 
 ## Run it!
 
-Pick the trade hub by region. You can subsitute `jita` with `amarr`, `hek`, `dodixie`, or `rens`.
+Pick the region by specifying the trade hub. You can subsitute `jita` with `amarr`, `hek`, `dodixie`, or `rens`.
 
 ### With Docker:
 
 ```
-docker pull mitchfen/ore_price_checker:latest
 docker run -it --rm mitchfen/ore_price_checker:latest jita
 ```
 
