@@ -3,18 +3,22 @@ name: simple-test
 on: [push]
 
 jobs:
-  test-build-success:
+  simple-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
+
       - name: Setup Node.js 14
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name: Install dependencies
-        run: npm ci
-      - name: Build using tsc
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Compile TypeScript
         run: |
           npm build
           echo "BUILD SUCCESS"
