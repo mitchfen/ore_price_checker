@@ -1,5 +1,5 @@
 # Ore price checker
-
+[![Publish container](https://github.com/mitchfen/ore_price_checker/actions/workflows/docker-push.yaml/badge.svg)](https://github.com/mitchfen/ore_price_checker/actions/workflows/docker-push.yaml)
 - Determines the most profitable HighSec ore to mine in EVE online.
 - Uses the [EVEMarketer](https://evemarketer.com/) API.
 
@@ -12,7 +12,7 @@ Pick the region by specifying the trade hub. You can subsitute `jita` with `amar
 # With Docker
 docker run -it --rm mitchfen/ore_price_checker:latest jita
 
-# Or with npm
+# With npm
 npm i
 npm run build
 npm run check jita
