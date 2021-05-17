@@ -1,6 +1,10 @@
 name: simple-test
 
-on: [push]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - "main"
 
 jobs:
   simple-test:
@@ -15,10 +19,7 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: |
-          npm install
+        run: npm ci
 
       - name: Compile TypeScript
-        run: |
-          npm build
-          echo "BUILD SUCCESS"
+        run: npm build
