@@ -4,22 +4,17 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - "main"
+      - main
+  push:
+    branches:
+      - main
 
 jobs:
   simple-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js 14
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Compile TypeScript
-        run: npm build
+      - uses: actions/checkout@v2
+      - run: |
+          npm install -g npm@latest
+          npm ci
+          npm run build
