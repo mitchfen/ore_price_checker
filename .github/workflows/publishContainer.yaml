@@ -1,7 +1,9 @@
+name: Publish container
+
 on:
   workflow_run:
     workflows:
-      - simple-test
+      - "Simple test"
     types:
       - completed
 
