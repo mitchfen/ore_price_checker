@@ -1,5 +1,3 @@
-name: simple-test
-
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -10,11 +8,12 @@ on:
       - main
 
 jobs:
-  simple-test:
+  simpleTest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
+      - name: Update npm + install + build
+        run: |
           sudo npm install -g npm@latest
           npm ci
           npm run build
