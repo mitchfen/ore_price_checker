@@ -11,12 +11,16 @@ Determines the most profitable HighSec ore to mine in EVE online using the [EVEM
 
 Pick the region by specifying the trade hub. You can subsitute `jita` with `amarr`, `hek`, `dodixie`, or `rens`.
 
-```bash
-# With Docker
-docker run -it --rm mitchfen/ore_price_checker:latest jita
+### With Docker
 
-# With npm
-npm i
+```bash
+docker run -it --rm mitchfen/ore_price_checker:latest jita
+```
+
+### With npm
+
+```bash
+npm install
 npm run build
 npm run check jita
 ```
