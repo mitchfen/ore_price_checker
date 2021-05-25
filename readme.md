@@ -14,7 +14,7 @@ Pick the region by specifying the trade hub. You can subsitute `jita` with `amar
 ### With Docker
 
 ```bash
-docker run -it --rm mitchfen/ore_price_checker:latest jita
+docker run -it --rm docker pull ghcr.io/mitchfen/ore_price_checker:latest jita
 ```
 
 ### With npm
