@@ -1,11 +1,10 @@
 name: "Dependabot Automerge"
 
 on:
-  workflow_run:
-    workflows:
-      - "Simple test"
-    types:
-      - completed
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
 
 jobs:
   worker:
