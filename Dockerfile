@@ -1,5 +1,5 @@
 # Build environment
-FROM node:latest as build
+FROM node:alpine as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json .
@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build
 
 # Execution environment
-FROM node:latest
+FROM node:alpine
 WORKDIR /app
 COPY --from=build /app/build /app/build
 ENV PATH /app/node_modules/.bin:$PATH
