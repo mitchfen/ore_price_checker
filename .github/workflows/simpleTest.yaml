@@ -13,9 +13,13 @@ jobs:
   simpleTest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Update npm + install + build
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update npm
+        run: sudo npm install -g npm@latest
+
+      - name: Install dependencies and build
         run: |
-          sudo npm install -g npm@latest
           npm ci
           npm run build
