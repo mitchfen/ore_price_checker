@@ -3,9 +3,9 @@
 [![Publish container](https://github.com/mitchfen/ore_price_checker/actions/workflows/publishContainer.yaml/badge.svg)](https://github.com/mitchfen/ore_price_checker/actions/workflows/publishContainer.yaml)  
 Determines the most profitable HighSec ore to mine in EVE online using the [EVEMarketer](https://evemarketer.com/) API.
 
-<img src="./screenshot.png" width="100%"/>
+## Screenshot
 
----
+<img src="./screenshot.png" width="100%"/>
 
 ## Run it
 

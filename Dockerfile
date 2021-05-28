@@ -2,10 +2,8 @@
 FROM node:alpine as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json .
-RUN npm i
 COPY . .
-RUN npm run build
+RUN npm install && run build
 
 # Execution environment
 FROM node:alpine
@@ -13,6 +11,6 @@ WORKDIR /app
 COPY --from=build /app/build /app/build
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json .
-RUN npm i -g npm@latest && npm i --production
+RUN npm install -g npm@latest && npm install --production
 ENTRYPOINT ["npm", "run", "check"]
 CMD ["jita"]
