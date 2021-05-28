@@ -3,7 +3,7 @@ FROM node:alpine as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY . .
-RUN npm install && run build
+RUN npm install && npm run build
 
 # Execution environment
 FROM node:alpine
